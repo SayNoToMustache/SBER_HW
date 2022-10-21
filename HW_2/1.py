@@ -13,15 +13,17 @@
 _str = input()
 print(f'{_str} - чемпион!')
 
-ex_1 = len(_str)*('-')
+# TODO тут скобки не нужны для символа строки
+ex_1 = len(_str) * '-'
 print(ex_1)
 
 _str = _str.lower()
 print(_str)
 
-if ('п' in _str) :
+# TODO и тут тоже не нужны
+if 'п' in _str:
     print('True')
-else :
+else:
     print('False')
     
 print(_str.count('а'))

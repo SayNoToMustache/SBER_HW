@@ -15,5 +15,5 @@ else:
     state = _str[:]
     _str = input('Введите название его столицы ')
     capital = _str
-    
+
 print(f'Государство - {state}, столица - {capital}')

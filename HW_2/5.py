@@ -9,8 +9,8 @@
 from cmath import inf
 from functools import reduce
 
-
-info = {}
+# TODO лучше все таки так создавть
+info = dict()
 
 # Добавить значения для ключей "фио", "дата_рождения", "место_рождения"
 info["фио"] = 'Alexander Vladimirovich Litvinov'
@@ -42,8 +42,6 @@ info['ЕГЭ']['Informatics'] = 90
 info['ЕГЭ']['Maths'] = 95
 info['ЕГЭ']['Physics'] = 90
 
-
-
 # Добавить экзамен, который не был сдан, после чего удалить его
 info['ЕГЭ']['Law'] = 1
 del info['ЕГЭ']['Law']
@@ -57,7 +55,6 @@ info['вузы'] = dict()
 info['вузы']['MSU'] = 460
 info['вузы']['MISIS'] = 123
 info['вузы']['MEPHI'] = 321
-
 
 # 2. Вывод на экран
 print("Данные:")
@@ -94,7 +91,6 @@ print("* у меня {} хобби, первое \"{}\"".format(hobbies_count, i
 # Количество сданных экзаменов
 print("* после окончания школы сдавал {} экз.".format(len(info['ЕГЭ'])))
 
-
 # Сумма баллов по экзаменам
 sum_mark = sum(info['ЕГЭ'].values())
 print("* сумма баллов = {}".format(sum_mark))
@@ -111,7 +107,7 @@ print("* макс. балл = {}".format(max_mark))
 vuz_count = 0
 for i in info['вузы'].values():
     vuz_count += int(sum_mark >= i)
-    
+
 print("* кол-во вузов в которые прохожу: {}".format(vuz_count))
 
 '''
