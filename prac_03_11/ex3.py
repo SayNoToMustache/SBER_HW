@@ -57,14 +57,15 @@ def ordinalDate(day: int, month: int, year: int) -> int:
     return sum(DAYS_IN_MONTH[:month-1])+day
 
 
-year = int(input("Введите год: "))
-month = int(input("Введите месяц: "))
-day = int(input("Введите день: "))
-ordDate = ordinalDate(day, month, year)
-if day < 10:
-    day = '0' + str(day)
-if month < 10:
-    month = '0' + str(month)
-_text = '\nДата по Григорианскому календар:\n  {day}:{month}:{year}\nПорядковая дата:\n  {ordDate}'
-print(_text.format(day=day, year=year, month=month,
-      ordDate=ordDate))
+if __name__ == "__main__":
+    year = int(input("Введите год: "))
+    month = int(input("Введите месяц: "))
+    day = int(input("Введите день: "))
+    ordDate = ordinalDate(day, month, year)
+    if day < 10:
+        day = '0' + str(day)
+    if month < 10:
+        month = '0' + str(month)
+    _text = '\nДата по Григорианскому календар:\n  {day}:{month}:{year}\nПорядковая дата:\n  {ordDate}'
+    print(_text.format(day=day, year=year, month=month,
+                       ordDate=ordDate))
