@@ -11,6 +11,26 @@
 
 # index_data = (index_year:int, day_number:int), day = 1 to 366
 
+DAYS_IN_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+
+def is_bis_sextus(_year) -> bool:
+    """
+    Args:
+        _year (int)
+
+    Returns:
+        bool: if _year is bis sextus year return true else false
+    """
+    if _year % 400 == 0:
+        return True
+    elif _year % 100 == 0:
+        return False
+    elif _year % 4 == 0:
+        return True
+    else:
+        return False
+
 
 def ordinalDate(day: int, month: int, year: int) -> int:
     """ordinal data by grigorian
@@ -24,35 +44,17 @@ def ordinalDate(day: int, month: int, year: int) -> int:
         int: ord
     """
 
-    days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     if month > 12 or month < 0:
         #print('Введите нормальный месяц')
         return -1
-    if day > days_in_month[month-1] and day < 0:
+    if day > DAYS_IN_MONTH[month-1] and day < 0:
         #print('Введите нормальный день')
         return -1
 
-    def is_bis_sextus(_year) -> bool:
-        """
-        Args:
-            _year (int)
-
-        Returns:
-            bool: if _year is bis sextus year return true else false
-        """
-        if _year % 400 == 0:
-            return True
-        elif _year % 100 == 0:
-            return False
-        elif _year % 4 == 0:
-            return True
-        else:
-            return False
-
     if is_bis_sextus(year):
-        days_in_month[1] = 29
+        DAYS_IN_MONTH[1] = 29
 
-    return sum(days_in_month[:month-1])+day
+    return sum(DAYS_IN_MONTH[:month-1])+day
 
 
 year = int(input("Введите год: "))
