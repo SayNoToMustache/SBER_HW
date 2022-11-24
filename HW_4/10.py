@@ -25,7 +25,7 @@ def is_magic_date(s):
 #print(is_magic_date('10 jun 1960'))
 
 #XX век это 1901 по 2000
-for year in range(1901, 2000-1):
+for year in range(1901, 2000+1):
     if ibs(year):
         DIM[1] = 29
     else:
