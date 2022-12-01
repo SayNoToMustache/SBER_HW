@@ -18,14 +18,35 @@ site = {
     }
 }
 
-def search_with_depth(key, depth = 'n'):
-    if depth == 'n':
-        if key in site.keys():
-            return site.items[1]
-        
 
-the_key = input('Введите искомый ключ: ')
-if input('Хотите ввести максимальную глубину? Y/N: ').lower() == 'n':
-    search_with_depth(the_key)
-else:
-    pass
+def search_with_depth(site: dict, key: str, depth: int | None = None):
+    if isinstance(site, dict):
+        if key in site:
+            return site.get(key)
+        if depth is not None and depth == 0:
+            return None
+        for value in site.values():
+            if (result := search_with_depth(
+                value,
+                key,
+                (depth-1 if depth is not None else None)
+            )) is not None:
+                break
+        else:
+            result = None
+        return result
+    else:
+        return None
+
+
+while True:
+    the_key = input('Введите искомый ключ: ')
+    string_ = input('Хотите ввести максимальную глубину? Y/N: ').lower()
+    if string_ == 'n':
+        print(search_with_depth(site, the_key))
+        break
+    elif string_ == 'y':
+        print(search_with_depth(site, the_key, int(input('Введите глубину: '))))
+        break
+    else:
+        print('yes or no')
