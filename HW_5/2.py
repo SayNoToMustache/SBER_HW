@@ -65,7 +65,7 @@ if __name__ == "__main__":
     N = int(input('Введите кол-во дисков'))
 
     def play_tower_of_hanoi(amount, start, another, end):
-        if (amount == 1):
+        if amount == 1:
             print(f'1 {start} {end}')
             return None
         play_tower_of_hanoi(amount - 1, start, end, another)

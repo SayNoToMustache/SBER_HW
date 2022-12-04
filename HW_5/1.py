@@ -25,11 +25,11 @@ def flattening(this_list_arg: list) -> list:
         list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     """
 
-    if not isinstance(this_list_arg, list):
-        if not isinstance(this_list_arg, tuple):
-            print(f'{bcolors.FAIL}Enter List or Tuple!{bcolors.ENDC}')
-            # exit()
-            return None
+    if not isinstance(this_list_arg, (list, tuple)):
+        # TODO не надо вложенные условия сделать, когда можно в одном это объединить
+        print(f'{bcolors.FAIL}Enter List or Tuple!{bcolors.ENDC}')
+        # TODO возврат надо делать согласно аннотации типов
+        return []
     this_list = this_list_arg.copy()
     if len(this_list) < 1:
         return []
