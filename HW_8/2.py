@@ -14,7 +14,8 @@
 # file2 = input("Введите файл куда нужно отправить")
 # with open("HW_8/file1", 'r', encoding="utf-8") as fd1, open("HW_8/file2", "w", encoding='utf-8') as fd2:
     
-with open("HW_8/2_file_to_delete.txt", 'r', encoding="utf-8") as fd1, open("HW_8/2_file_with_delete.txt", "w", encoding='utf-8') as fd2:
+with open("HW_8/2_file_to_delete.txt", 'r', encoding="utf-8") as fd1, \
+        open("HW_8/2_file_with_delete.txt", "w", encoding='utf-8') as fd2:
     for s in fd1:
         for j in s:
             if j == '#':

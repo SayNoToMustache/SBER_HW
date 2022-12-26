@@ -5,7 +5,8 @@
 '''
 
 answ = 0
-with open("HW_8/input_numbers.txt", 'r', encoding="utf-8") as file, open("HW_8/output_sum.txt", 'w', encoding="utf-8") as out:
+with open("HW_8/input_numbers.txt", 'r', encoding="utf-8") as file, \
+        open("HW_8/output_sum.txt", 'w', encoding="utf-8") as out:
     for i in file:
         s = i.strip()
         s = s.split()
